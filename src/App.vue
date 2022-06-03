@@ -133,13 +133,11 @@
 
 <script>
 import Header from './components/Header.vue'
-import InputSpace from './components/InputSpace.vue'
 import Drink from './components/Drink.vue'
 export default {
   name: 'App',
   components: {
     Header,
-    InputSpace,
     Drink,
   },
   data () {
@@ -242,10 +240,10 @@ export default {
   mounted() {
     var myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json");
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-    };
+    // var requestOptions = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    // };
     fetch("http://api.acusense.io/apis/manufacturers")
         .then(response => response.json())
         .then(result => {
